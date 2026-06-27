@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bbbbkkkk
+  description: Sample service with CI/CD
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    sonarqube.org/project-key: devops-champ_bbbbkkkk
+    jenkins.io/job-full-name: devops-champ/bbbbkkkk/main
+    argocd/app-name: guestbook
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/platform-team
+  dependsOn:
+    - component:default/payment-service
+    - component:default/user-service
+    - resource:default/orders-db
+    - resource:default/kafka-cluster
